@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticeboard</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; cursor: none; }
+  #screen { display: flex; width: 100vw; height: 100vh; }
+  #screen.stacked { flex-direction: column; }
+  .pane { position: relative; overflow: hidden; flex: none; }
+  .divider { flex: none; }
+  .layer {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.8s ease;
+  }
+  .layer.show { opacity: 1; }
+  .layer img, .layer video { width: 100%; height: 100%; object-fit: contain; }
+  .layer canvas { display: block; box-shadow: 0 0 24px rgba(0,0,0,0.5); }
+  .message {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    padding: 5%; box-sizing: border-box; text-align: center;
+    color: #aaa; font: 2.2vmin/1.5 system-ui, sans-serif;
+  }
+  #debug {
+    position: fixed; left: 0; bottom: 0; max-height: 30vh; overflow: auto;
+    background: rgba(0,0,0,0.8); color: #0f0; font: 12px monospace; padding: 6px; display: none;
+  }
+</style>
+</head>
+<body>
+<div id="screen">
+  <div class="pane" id="announcements"></div>
+  <div class="divider" id="divider"></div>
+  <div class="pane" id="ads"></div>
+</div>
+<pre id="debug"></pre>
+
+<script src="config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

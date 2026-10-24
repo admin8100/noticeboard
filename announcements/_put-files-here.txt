@@ -1,0 +1,1 @@
+Put your announcement PDFs (or JPG/PNG) in this folder. Files play in name order, e.g. 01-opening-hours.pdf, 02-holiday-notice.pdf. This text file is ignored.

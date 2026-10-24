@@ -1,0 +1,1 @@
+Put your ad posters, pictures and videos (JPG, PNG, MP4) in this folder. Files play in name order. This text file is ignored.
